@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: beige;
+    height: 2200px;
+}
+
+header{
+    background-color: rgb(64, 141, 212);
+    height: 200px;
+}
+
+nav{
+    background-color: gainsboro;
+    height: 200px;
+    position: sticky;
+    top: 0px;
+    z-index: 50;
+}
+
+main{
+    height: 1700px;
+}
+
+footer{
+    background-color: gainsboro;
+    text-align: left;
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100px;
+    padding: 10px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 80px;
+}
+
+.home_titulo{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Architects Daughter', cursive;
+    height: 100px;
+    padding: 10px;
+}
+
+.parrafo_home{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+.imagen_home{
+    height: 70%;
+    width: auto;
+    border-radius: 35px;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.Menu{
+    height: 50px;
+    list-style-type: none; /*me sirve para la creacion del menu*/
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.parrafo_acerca{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    
+}
+
+.imagen_acerca{
+    border-radius: 35px;
+    padding: 20px;
+    margin-left: 400px;
+    height: 720px;
+    width: 720px;
+    
+}
+
+.boton{
+    text-align: center;
+    margin-left: 700px;
+    margin-top: 30px;
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: grey;
+    color: white;
+}
+
+#Experiencia{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: rgb(73, 60, 78);
+    width: 100%;
+    text-align: left;
+    list-style: disc;
+    margin-left: 40px;
+    margin-bottom: 4px;
+    margin-top: 20px;
+}
+
+#Sedes{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: rgb(73, 60, 78);
+    width: 100%;
+    text-align: left;
+    list-style: disc;
+    margin-left: 40px;
+    margin-bottom: 4px;
+    margin-top: 20px;
+}
+
+.parrafo{
+    color: rgb(175, 86, 213);
+    font-style: italic;
+    font-weight: 20;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    text-decoration: solid;
+}
+
+.terapias_evaluaciones{
+    color: rgb(73, 60, 78);
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    text-decoration: solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.titulo_terapias{
+    text-align: center;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+.imagen_terapias{
+    border-radius: 50px;
+    width: 60%;
+    height: 35%;
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+
+
+.parrafo_contacto{
+    color: rgb(73, 60, 78);
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.formulario{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    background-color: rgb(65, 174, 119);
+    height: 300px;
+    width: 700px;
+}
+
+#titulo_formulario{
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(73, 60, 78);
+}
+
+#campo_formulario{
+    font-size: 20px;
+    margin-left: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(73, 60, 78);
+}
+
+.mapa{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    height: 1000px;
+    width: 1000px;
+
+}
+
+
+
+
+
+
+
+
+
+
