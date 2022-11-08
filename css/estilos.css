@@ -1,357 +1,243 @@
-*{
-    margin: 0;
-    padding: 0;
+/*$ancho_galeria: 300px + 2vw;*/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
-
-#grilla_body{
-    display:grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 400px 200px 1500px 300px;
-    grid-template-areas: "header"
-                         "nav"
-                         "main"
-                         "footer";
+#grilla_body {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 400px 200px 1500px 300px;
+  grid-template-areas: "header" "nav" "main" "footer";
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: rgb(245, 231, 220);
-    height: 2200px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(245, 231, 220);
+  background-image: radial-gradient(whitesmoke, rgb(245, 231, 220));
+  height: 2200px;
 }
 
-header{
-    background-color: rgb(64, 141, 212);
+header {
+  background-color: rgb(64, 141, 212);
+  background-image: radial-gradient(white, rgb(64, 141, 212));
 }
 
-nav{
-    background-color: rgb(137, 153, 173);
-    position: sticky;
-    top: 0px;
-    z-index: 50;
+nav {
+  background-color: rgb(64, 141, 212);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 50;
 }
 
-ul{
-    display:flex;  
-    flex-direction: row;
-    list-style-type: none;
-    height: 100%;
+ul {
+  display: flex;
+  list-style-type: none;
 }
 
-li{
-    color:white;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+li {
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+/*Nesting de Estilos en el section*/
+section {
+  height: 30%;
+  width: 90%;
+  opacity: 0.7;
+}
+section h2 {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+}
+section p {
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  justify-content: center;
+  text-align: justify;
+  color: rgb(73, 60, 78);
+}
 
-main{
-    display: flex;
+footer {
+  background-color: rgb(64, 141, 212);
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 30px;
+  text-align: center;
+  padding: 10px;
+}
+
+/*Clase para Reutilizar Propiedades de Grid*/
+.formateo_grids, .grid_section_acerca, .grid_section_home {
+  display: grid;
+  justify-content: space-around;
+  align-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Definicion de Estructuras Grid*/
+.grid_section_home {
+  grid-template-columns: 50% 40%;
+  grid-template-rows: 30% 60%;
+  grid-template-areas: "img titulo" "img parrafo";
+}
+
+.grid_section_acerca {
+  grid-template-columns: 55% 35%;
+  grid-template-rows: 100%;
+  grid-template-areas: "img list";
+}
+
+/*Manejo de Imagenes*/
+img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.img_section_home {
+  grid-area: img;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 35px;
+}
+
+.imagen_acerca {
+  border-radius: 20px;
+  grid-area: img;
+}
+
+.img_section_home:hover {
+  transform: scale(1.1, 1.1);
+  border-radius: 20%;
+}
+
+.lista_acerca {
+  display: inline;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Architects Daughter", cursive;
+  font-size: 80px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+#Experiencia {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: rgb(73, 60, 78);
+  width: 90%;
+  text-align: left;
+  list-style: disc;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.mapa {
+  height: 100%;
+  width: 100%;
+}
+
+/*Media Query XS & S*/
+@media only screen and (max-width: 600px) {
+  #grilla_body {
+    grid-template-columns: 100%;
+    grid-template-rows: 300px 200px 2000px 100px;
+    grid-template-areas: "header" "nav" "main" "footer";
+  }
+  h1 {
+    font-size: 60px;
+  }
+  ul {
+    height: 200px;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-}
-
-section{
-    height: 25%;
-    width: 90%;
-    opacity: 0.7;
-
-}
-
-.grid_section_home{
-    display: grid;
-    grid-template-columns: 50% 40%;
-    grid-template-rows: 30% 60%;
-    grid-template-areas: "img titulo"
-                         "img parrafo";
-    justify-content: space-around;
-    align-content: space-evenly;
-    justify-items: center;
-    align-items: center;
-   
-                         
-}
-
-.grid_section_acerca{
-    display:grid;
-    grid-template-columns: 55% 35%;
-    grid-template-rows: 100%;
-    grid-template-areas: "img list";
-    justify-content: space-around;
-    align-content: space-evenly;
-    justify-items: center;
-    align-items: center;
-    height: 65%;
-   
-}
-
-.parrafo_acerca{
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 25px;
-    
-}
-
-img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    filter: grayscale(70%);
-    
-}
-
-.img_section_home{
-    grid-area: img;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 35px;
-}
-
-.imagen_acerca{
-    border-radius: 20px;
-    grid-area: img;
-}
-
-.img_section_home:hover{
-    transform: scale(1.1,1.1);
-    border-radius: 20%;
-    
-}
-
-.lista_acerca{
-    display: inline;
-}
-
-
-footer{
-    background-color: rgb(137, 153, 173);
-    text-align: center;
-    margin-top: 30px;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    padding: 10px;
-}
-
-h1{
-    text-align: center;
-    color: white;
-    font-family: 'Architects Daughter', cursive;
-    font-size: 80px;
-}
-
-.home_titulo{
-    text-align: center;
-    font-size: 50px;
-    font-family: 'Architects Daughter', cursive;
-    height: 100px;
-    padding: 10px;
-}
-
-.parrafo_home{
-    
-    font-size: 20px;
-    text-align: center;
-    
-    
-    
-}
-
-.imagen_home{
-    height: 80%;
-    width: auto;
-    border-radius: 35px;
-    
-    padding: 10px;
-}
-
-.logo{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-
-.Menu{
-    display: flex;
-    height: 50px;
-    list-style-type: none; /*me sirve para la creacion del menu*/
-}
-
-a{
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.parrafo_acerca{
-    
-    
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    justify-content: center;
-    text-align: justify;
-    
-}
-
-
-
-#Experiencia{
-    font-family: 'Roboto', sans-serif;
+  }
+  li {
     font-size: 18px;
-    color: rgb(73, 60, 78);
-    width: 90%;
-    text-align: left;
+  }
+  .grid_section_home {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 40% 30%;
+    grid-template-areas: "titulo" "img" "parrafo";
+  }
+  .grid_section_acerca {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 55% 35%;
+    grid-template-areas: "img" "list";
+    height: 90%;
+  }
+  #Experiencia {
+    font-size: 18px;
+    text-align: justify;
     list-style: disc;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    margin-top: 10px;
-}
-
-
-
-.parrafo{
-    color: rgb(175, 86, 213);
-    font-style: italic;
-    font-weight: 20;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    text-align: justify;
-    text-decoration: solid;
-}
-
-.terapias_evaluaciones{
-    color: rgb(73, 60, 78);
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    text-align: justify;
-    
-}
-
-.titulo_terapias{
+    align-items: left;
+  }
+  footer p {
+    color: white;
+    font-size: 16px;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 25px;
-    
-}
-
-
-.parrafo_contacto{
-    color: rgb(73, 60, 78);
+  }
+  section h2 {
+    text-align: center;
     font-size: 20px;
-    font-family: 'Roboto', sans-serif;
+  }
+  section p {
+    padding: 5px;
+    font-size: 18px;
+    justify-content: left;
     text-align: justify;
-    
+  }
 }
-
-.mapa{
-    
+/*Media Query MD & Large*/
+@media only screen and (min-width: 600px) {
+  #grilla_body {
+    grid-template-columns: 100%;
+    grid-template-rows: 400px 200px 1600px 100px;
+    grid-template-areas: "header" "nav" "main" "footer";
+  }
+  ul {
+    flex-direction: row;
     height: 100%;
-    width: 100%;
-
-}
-
-/*XS & S*/
-
-@media only screen and ( max-width:600px){
-
-    header{
-        height: 300px;
-    }
-    
-    ul{
-        height: 200px;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    li{
-        font-size:20px;
-    }
-
-    .grid_section_home{
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 20% 40% 30%;
-        grid-template-areas: "titulo"
-                             "img" 
-                             "parrafo";
-        justify-content: space-around;
-        align-content: space-evenly;
-        justify-items: center;
-        
-        height: 60%;
-                             
-    }
-
-    .grid_section_acerca{
-        display:grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 55% 35%;
-        grid-template-areas: "img"
-                             "list";
-        justify-content: space-around;
-        align-content: space-evenly;
-        justify-items: center;
-        align-items: center;
-       
-    }
-
-    #Experiencia{
-        
-        font-size: 18px;
-        text-align: justify;
-        list-style: disc;
-        align-items: left;
-        
-    }
-
-    footer p{
-        color:white;
-        font-size:16px;
-        text-align: center;
-    }
-
-    
-  
-}
-
-/*MD*/
-
-@media only screen and (min-width:600px){
-
-    header{
-        height: 500px;
-    }
-
-    ul{
-        flex-direction: row;
-        height: 100%;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    li{
-        font-size: 22px;
-    }
-
-    
-    footer{
-        height: 100px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  li {
+    font-size: 20px;
+  }
+  footer {
+    height: 100px;
+  }
+}/*# sourceMappingURL=estilos.css.map */
