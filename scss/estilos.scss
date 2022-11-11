@@ -1,4 +1,5 @@
 @import "variables/variables";
+@import "componentes/componente";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
 *{
@@ -6,11 +7,10 @@
     padding: 0;
 }
 
-
 #grilla_body{
-    display:grid;
+    @include creo_componente(grid);
     grid-template-columns: 100%;
-    grid-template-rows: 400px 200px 1500px 300px;
+    grid-template-rows: 400px 200px 1800px 300px;
     grid-template-areas: "header"
                          "nav"
                          "main"
@@ -37,16 +37,14 @@ nav{
 }
 
 ul{
-    display:flex;  
+    @include creo_componente(flex);
     list-style-type: none;
+    
+    li{
+        color:white;
+        font-family: $fuente_principal;
+    }
 }
-
-li{
-    color:white;
-    font-family: $fuente_principal;
-}
-
-
 
 main{
     display: flex;
@@ -58,23 +56,20 @@ main{
 /*Nesting de Estilos en el section*/
 
 section{
-    height: 30%;
+    height: 35%;
     width: 90%;
     opacity: 0.7;
+    padding: 10px;
 
     h2{
-        text-align: center;
-        font-family: $fuente_principal;
-        font-size: 25px;
+        @include setear_h2(center,$fuente_principal,25px);
+        
     }
 
     p{
-        padding: 10px;
-        font-family: $fuente_principal;
-        font-size: 25px;
+        @include setear_parrafo($color_parrafo,$fuente_principal,25px,justify,10px);
         justify-content: center;
-        text-align: justify;
-        color: $color_parrafo;
+        
     }
 
 }
@@ -83,12 +78,14 @@ footer{
     background-color: $color_header;
     font-size: 20px;
     font-family: $fuente_principal;
-    margin-top: 30px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     text-align: center;
     padding: 10px;
 }
 
 /*Clase para Reutilizar Propiedades de Grid*/
+
 .formateo_grids{
     display: grid;
     justify-content: space-around;
@@ -107,6 +104,7 @@ footer{
     grid-template-areas: "img titulo"
                          "img parrafo";
     @extend .formateo_grids;
+    
       
                          
 }
@@ -117,30 +115,32 @@ footer{
     grid-template-areas: "img list";
     @extend .formateo_grids;
     
-   
 }
 
 
 /*Manejo de Imagenes*/
 
-img{
+.formato_imagen{
     height: 100%;
     width: 100%;
     object-fit: cover;
-       
+}
+
+img{
+    @extend .formato_imagen;       
 }
 
 .img_section_home{
+    @extend .formato_imagen;
     grid-area: img;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
     border-radius: 35px;
 }
 
 .imagen_acerca{
-    border-radius: 20px;
+    @extend .formato_imagen;
     grid-area: img;
+    border-radius: 20px;
+    
 }
 
 .img_section_home:hover{
@@ -157,7 +157,7 @@ img{
 h1{
     text-align: center;
     font-family: 'Architects Daughter', cursive;
-    font-size: 80px;
+    font-size: 70px;
 }
 
 
@@ -170,9 +170,9 @@ h1{
 
 a{
     color: white;
-    text-decoration: none;
     font-size: 20px;
     font-family: $fuente_principal;
+    text-decoration: none;
 }
 
 
@@ -183,9 +183,9 @@ a{
     width: 90%;
     text-align: left;
     list-style: disc;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-bottom: 5px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .mapa{
@@ -207,7 +207,7 @@ a{
     }
     
     h1{
-        font-size: 60px;
+        font-size: 50px;
     }
     
     ul{
@@ -215,10 +215,10 @@ a{
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-    }
 
-    li{
-        font-size:18px;
+        li{
+            font-size:18px;
+        }
     }
 
     
@@ -238,7 +238,7 @@ a{
     .grid_section_acerca{
         display:grid;
         grid-template-columns: 100%;
-        grid-template-rows: 55% 35%;
+        grid-template-rows: 40% 50%;
         grid-template-areas: "img"
                              "list";
         @extend .formateo_grids;
@@ -260,6 +260,8 @@ a{
         font-size:16px;
         text-align: center;
     }
+
+    /*Nesting de Estilos en el section*/
 
     section{
          
@@ -286,7 +288,7 @@ a{
 
     #grilla_body{
         grid-template-columns: 100%;
-        grid-template-rows: 400px 200px 1600px 100px;
+        grid-template-rows: 400px 200px 1800px 100px;
         grid-template-areas: "header"
                              "nav"
                              "main"
@@ -298,13 +300,12 @@ a{
         height: 100%;
         justify-content: space-evenly;
         align-items: center;
+
+        li{
+            font-size: 20px;
+        }
     }
 
-    li{
-        font-size: 20px;
-    }
-
-    
     footer{
         height: 100px;
     }

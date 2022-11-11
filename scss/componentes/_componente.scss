@@ -1,0 +1,26 @@
+
+/*Mixin que define componente*/
+
+@mixin creo_componente ($tipo_componente) {
+    display: $tipo_componente;    
+}
+
+/*Mixin que formatea Header 2*/
+
+@mixin  setear_h2 ($alineacion_texto, $fuente_texto, $size_fuente) {
+    text-align: $alineacion_texto;
+    font-family: $fuente_texto;
+    font-size: $size_fuente;
+}
+
+/*Mixin que formatea parrafos*/
+
+@mixin setear_parrafo ($color_parrafo, $fuente_parrafo, $size_parrafo, $alineacion_texto, $padding) {
+
+    color: $color_parrafo;
+    font-family: $fuente_parrafo;
+    font-size: $size_parrafo;
+    padding: $padding;
+    text-align: j$alineacion_texto;
+ 
+}
